@@ -22,6 +22,7 @@ namespace Introduktion.WPF
     {
         public MainWindow()
         {
+            
             InitializeComponent();
         }
 
@@ -29,11 +30,15 @@ namespace Introduktion.WPF
         {
             if (firstNameText.Text == string.Empty)
             {
-                MessageBox.Show("Try agian, textbox is empty");
+                
+                MessageBox.Show($"Prøv igen. Feltet var tomt");
                 return;
             }
             else
+            {
                 MessageBox.Show($"Hej {firstNameText.Text} velkommen. Du er nu videre til næste skridt.");
+            }
+                
 
             Window1 p = new();
 

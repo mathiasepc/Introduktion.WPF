@@ -50,23 +50,25 @@ namespace Introduktion.WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            //laver en tryparse sådan så den kan omskrive fra text til tal.
             bool succes = int.TryParse(matematikSpørgsmålText.Text, out int number);
             if (succes)
             {
                 if (number == 4)
                 {
+                    //hvis du har taster rigtigt kommer dette billede frem
                     CreateViewImageDynamically(sender, e);
-                    MessageBox.Show("Rigtig!");
+                    MessageBox.Show($"Rigtig flot!");
                 }
                 else
                 {
-                    MessageBox.Show("Forkert. Prøv igen.");
+                    //hvis du taster forkert
+                    MessageBox.Show($"Du er lort. Prøv igen.");
                     return;
                 }
             }
 
-            MainWindow p = new();
+            Window2 p = new();
 
             p.Show();
 

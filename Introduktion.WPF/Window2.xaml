@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -23,9 +24,12 @@
         <TextBlock TextAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="10,10,0,10"  FontSize="30"
                    Text="Tap The Button As Fast As You Can"/>
 
-        <TextBlock x:Name ="Tap"  Grid.Column="1" Grid.Row="2" Text="" TextAlignment="Center" 
-                   Margin="0,70"/>
-        <Button Grid.Column="1" Grid.Row="2" Height="40" Width="40" Margin="0, 0, 0, 100" Click="Button_Click" />
+        <TextBlock x:Name="TimerDisplay" TextAlignment="Center" Grid.Column="1"  Margin ="0,50,0,0" Grid.Row="2" FontSize="30" Text="" Foreground="Red"/>
 
+        <TextBlock x:Name ="Tap" Grid.Column="1" Grid.Row="3" Text="" TextAlignment="Center" 
+                   />
+        <Button x:Name="StartButton" Content="Tap To Start" FontSize="10" Margin="0,0,0,135" Grid.Column="1" Grid.Row="3" Height="40" Width="60" Click="StartButton_Click" />
+
+        <Button x:Name="TapButton" Content="Tap Me" FontSize="10" Margin="0,0,0,135" Grid.Column="1" Grid.Row="3" Height="40" Width="60" Visibility="Hidden" Click="TapButton_Click"/>
     </Grid>
 </Window>
