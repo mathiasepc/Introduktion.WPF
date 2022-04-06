@@ -36,7 +36,7 @@
 
         <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="First Name" 
                    FontFamily="Segoe UI"/>
-        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" Width="150"/>
+        <TextBox x:Name="firstNameText" TextAlignment="Center" Grid.Column="2" Grid.Row="2" Width="150"/>
         
         <Button x:Name="submitButton" Content="Run Me" Grid.Column="1" Grid.Row="3" 
                 Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click"/>
