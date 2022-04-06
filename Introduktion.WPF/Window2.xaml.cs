@@ -37,29 +37,33 @@ namespace Introduktion.WPF
             Button button = sender as Button;
 
             //hentet herfra https://stackoverflow.com/questions/16748371/how-to-make-a-wpf-countdown-timer
+            //sætter min tid til 10
             _time = TimeSpan.FromSeconds(10);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 TimerDisplay.Text = _time.ToString("c");
+                //når tiden er gået
                 if (_time == TimeSpan.Zero)
                 {
                     _timer.Stop();
                     MessageBox.Show($"godt gået du klikkede {Tap.Text} gange");
                 }
+                //hver gang der er gået et sekund
                 _time = _time.Add(TimeSpan.FromSeconds(-1));
             }, Application.Current.Dispatcher);
 
+            //start tiden
             _timer.Start();
 
+            //gemmer min knap
             button.Visibility = Visibility.Hidden;
 
             //min timer delay compensation
             Thread.Sleep(900);
 
+            //den knap som tæller dine klik bliver synlig
             TapButton.Visibility = Visibility.Visible;
-            
-
         }
         private void TapButton_Click(object sender, RoutedEventArgs e)
         {
@@ -69,8 +73,10 @@ namespace Introduktion.WPF
             //laver en funktion til min tælle metode sådan når Tapbutton bliver trykket på
             if (button != null && button.Name == "TapButton")
             {
-                PointCollecter(sender, e);
+                if (_time > TimeSpan.Zero)
+                    PointCollecter(sender, e);
             }
+
         }
 
         private void PointCollecter(object sender, RoutedEventArgs e)
