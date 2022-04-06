@@ -24,5 +24,22 @@ namespace Introduktion.WPF
         {
             InitializeComponent();
         }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (firstNameText.Text == string.Empty)
+            {
+                MessageBox.Show("Try agian, textbox is empty");
+                return;
+            }
+            else
+                MessageBox.Show($"Hej {firstNameText.Text} velkommen. Du er nu videre til næste skridt.");
+
+            Window1 p = new();
+
+            p.Show();
+
+            this.Close();
+        }
     }
 }

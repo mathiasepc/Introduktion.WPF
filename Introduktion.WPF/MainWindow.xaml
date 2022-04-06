@@ -4,9 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Introduktion.WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI Light"
+        Title="Our WPF demo" Height="450" Width="800">
+    <!--Det som bliver kodet i mc. Der gælder det for alle Elementer som ikke har konfiguration-->
+    <!--Hvis der bliver ændret på titel er det selve boksen man ændre på-->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- hvis man laver en '<noget kode />' gælder det for en åben og luk.
+            så behøver man ikke en åben og luk ->'<grid></grid>'-->
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="* "/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <!--ColumnSpan tillader en textblock at gå ind i andre colums.-->
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" Text="WPF Super Demo" 
+                   Grid.ColumnSpan="3" Margin="0,0,0,10"/>
 
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="First Name" 
+                   FontFamily="Segoe UI"/>
+        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" Width="150"/>
+        
+        <Button x:Name="submitButton" Content="Run Me" Grid.Column="1" Grid.Row="3" 
+                Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click"/>
     </Grid>
 </Window>
