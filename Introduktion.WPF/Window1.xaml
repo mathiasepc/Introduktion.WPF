@@ -37,7 +37,7 @@
 
         <Image Visibility="Hidden">
             <Image.Source>
-                <BitmapImage UriSource="H:\\Firework.Test.jpg"/>
+                <BitmapImage UriSource="H:\WPF basic\Firework.Test.JPG"/>
             </Image.Source>
         </Image>
     </Grid>

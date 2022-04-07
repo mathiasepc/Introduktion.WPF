@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock TextAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="10,10,0,10"  FontSize="30"
-                   Text="Tap The Button As Fast As You Can"/>
+                   Text="Tryk På Knappen Så Hurtigt Du Kan"/>
 
         <TextBlock x:Name="TimerDisplay" TextAlignment="Center" Grid.Column="1"  Margin ="0,50,0,0" Grid.Row="2" FontSize="30" Text="" Foreground="Red"/>
 

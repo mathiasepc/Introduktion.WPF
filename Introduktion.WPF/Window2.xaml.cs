@@ -34,7 +34,7 @@ namespace Introduktion.WPF
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             //laver en funktion for min button
-            Button button = sender as Button;
+            Button? button = sender as Button;
 
             //hentet herfra https://stackoverflow.com/questions/16748371/how-to-make-a-wpf-countdown-timer
             //sætter min tid til 10
@@ -68,22 +68,18 @@ namespace Introduktion.WPF
         private void TapButton_Click(object sender, RoutedEventArgs e)
         {
             //laver en funktion for min button
-            Button button = sender as Button;
+            Button? button = sender as Button;
 
             //laver en funktion til min tælle metode sådan når Tapbutton bliver trykket på
             if (button != null && button.Name == "TapButton")
             {
                 if (_time > TimeSpan.Zero)
-                    PointCollecter(sender, e);
+                {
+                    //laver en som tæller mine klik
+                    scoreTap++;
+                    Tap.Text = scoreTap.ToString();
+                }       
             }
-
-        }
-
-        private void PointCollecter(object sender, RoutedEventArgs e)
-        {
-            //laver en som tæller mine klik
-            scoreTap++;
-            Tap.Text = scoreTap.ToString();
         }
     }
 }

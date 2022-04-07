@@ -39,7 +39,7 @@ namespace Introduktion.WPF
                 MessageBox.Show($"Hej {firstNameText.Text} velkommen. Du er nu videre til næste skridt.");
             }
                 
-
+            //opretter window1
             Window1 p = new();
 
             p.Show();

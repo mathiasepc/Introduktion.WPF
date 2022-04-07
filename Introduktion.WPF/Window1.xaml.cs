@@ -23,31 +23,6 @@ namespace Introduktion.WPF
         {
             InitializeComponent();
         }
-
-        private void CreateViewImageDynamically(object sender, RoutedEventArgs e)
-        {
-            //create image og propperties
-            Image dynamicImage = new();
-            dynamicImage.Width = 200;
-            dynamicImage.Height = 150;
-
-            //Create a bitmapsource
-            BitmapImage bitmap = new();
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(@"H:\\Firework.Test.jpg");
-            bitmap.EndInit();
-
-            //set Image.Source
-            dynamicImage.Source = bitmap;
-
-            //tilføj til grid
-            Root.Children.Add(dynamicImage);
-
-            //placering for billede
-            Grid.SetColumn(dynamicImage, 4);
-            Grid.SetRow(dynamicImage, 3);
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //laver en tryparse sådan så den kan omskrive fra text til tal.
@@ -67,13 +42,36 @@ namespace Introduktion.WPF
                     return;
                 }
             }
-
+            //opretter mit window2
             Window2 p = new();
 
             p.Show();
 
             this.Close();
-            
+
+        }
+        private void CreateViewImageDynamically(object sender, RoutedEventArgs e)
+        {
+            //create image og propperties
+            Image dynamicImage = new();
+            dynamicImage.Width = 200;
+            dynamicImage.Height = 150;
+
+            //Create a bitmapsource
+            BitmapImage bitmap = new();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(@"H:\WPF basic\Firework.Test.JPG");
+            bitmap.EndInit();
+
+            //set Image.Source
+            dynamicImage.Source = bitmap;
+
+            //tilføj til grid
+            Root.Children.Add(dynamicImage);
+
+            //placering for billede i colum og raw
+            Grid.SetColumn(dynamicImage, 4);
+            Grid.SetRow(dynamicImage, 3);
         }
     }
 }
